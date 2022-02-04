@@ -1,0 +1,10 @@
+documentation:
+- 'docs/**'
+- '**/*.md'
+- '*.md'
+github-config: .github/**
+release-config: .releaserc.yml
+repo-config:
+- '*'
+- '.*'
+terraform: terraform/**
