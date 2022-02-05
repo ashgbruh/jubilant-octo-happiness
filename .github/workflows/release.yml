@@ -1,10 +1,8 @@
----
-
 name: Release
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   release:
     name: Release
@@ -12,16 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ env.GITHUB_REF }}
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12'
+
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
         with:
           extra_plugins: |
+            @semantic-release/changelog
             @semantic-release/exec
             @semantic-release/git
         env:
