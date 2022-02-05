@@ -1,0 +1,18 @@
+name: build_nonprod
+
+on:
+  release:
+    types:
+      - published
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+#         with:
+#           ref: ${{ env.GITHUB_REF }}
+#       - name: Build ${{ github.event.inputs.APP }} ami
+#         run: make build_ami APP=${{ github.event.inputs.APP }} ENV=nonprod
+# env:
+#   GITHUB_TOKEN: ${{ secrets.ILS_APPLICATION_REPO_PAT }}
